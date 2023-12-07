@@ -1,0 +1,27 @@
+version: "3.8"
+
+networks:
+  default:
+
+services:
+  next:
+    container_name: front-cube
+    build:
+      context: ../front-cube
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "${APP_PORT}:${APP_PORT}"
+    stdin_open: true
+    tty: true
+    volumes:
+      - ../front-cube:/app
+      - FRONT-node_modules:/app/node_modules
+      - /app/.next
+    networks:
+      - default
+    command: sh -c "npm install && npm run dev"
+
+volumes:
+  FRONT-node_modules:
