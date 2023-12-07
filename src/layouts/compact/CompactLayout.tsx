@@ -2,7 +2,6 @@ import { Box, Container, Stack } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import dynamic from "next/dynamic";
 import { HEADER } from "src/config-global";
-import useOffSetTop from "../../hooks/useOffSetTop";
 //
 const Header = dynamic(() => import("./Header"), { ssr: false });
 
@@ -13,12 +12,11 @@ type Props = {
 };
 
 export default function CompactLayout({ children }: Props) {
-  const isOffset = useOffSetTop(HEADER.H_MAIN_DESKTOP);
   const theme = useTheme();
 
   return (
     <>
-      <Header isOffset={isOffset} />
+      <Header />
       <Box
         sx={{
           background: `linear-gradient(-135deg,${theme.palette.secondary.dark},${theme.palette.secondary.darker})`,

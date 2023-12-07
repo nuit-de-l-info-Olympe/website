@@ -13,6 +13,7 @@ import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 // load react circular progress
 import "react-circular-progressbar/dist/styles.css";
+import { StyledEngineProvider } from "@mui/material/styles";
 
 // lazy image
 import "react-lazy-load-image-component/src/effects/blur.css";
@@ -67,11 +68,10 @@ export default function MyApp(props: MyAppProps) {
   // @ts-ignore
   return (
     <>
-      <Head>
-        <meta name="viewport" content="initial-scale=1, width=device-width" />
-      </Head>
       <QueryClientProvider client={queryClient}>
-        {getLayout(<Component {...pageProps} />)}
+        <StyledEngineProvider injectFirst>
+          {getLayout(<Component {...pageProps} />)}
+        </StyledEngineProvider>
       </QueryClientProvider>
     </>
   );

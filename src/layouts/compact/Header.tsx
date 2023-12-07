@@ -6,11 +6,7 @@ import { HEADER } from "../../config-global";
 
 // ----------------------------------------------------------------------
 
-type Props = {
-  isOffset: boolean;
-};
-
-export default function Header({ isOffset }: Props) {
+export default function Header() {
   const theme = useTheme();
 
   return (
@@ -29,15 +25,8 @@ export default function Header({ isOffset }: Props) {
             easing: theme.transitions.easing.easeInOut,
             duration: theme.transitions.duration.shorter,
           }),
-          ...(isOffset && {
-            height: {
-              md: HEADER.H_MAIN_DESKTOP - 16,
-            },
-          }),
         }}
       ></Toolbar>
-
-      {isOffset && <Shadow />}
     </AppBar>
   );
 }

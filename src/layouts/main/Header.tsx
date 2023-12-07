@@ -5,8 +5,7 @@ import { useTheme } from "@mui/material/styles";
 // components
 // config
 import { HEADER } from "../../config-global";
-import useOffSetTop from "../../hooks/useOffSetTop";
-import useResponsive from "../../hooks/useResponsive";
+
 // utils
 import navConfig from "./nav/config-navigation";
 import NavDesktop from "./nav/desktop";
@@ -18,9 +17,7 @@ import NavMobile from "./nav/mobile";
 export default function Header() {
   const theme = useTheme();
 
-  const isDesktop = useResponsive("up", "lg");
 
-  const isOffset = useOffSetTop(HEADER.H_MAIN_DESKTOP);
 
   return (
     <AppBar color="transparent" sx={{ boxShadow: 0 }}>
@@ -35,11 +32,7 @@ export default function Header() {
             easing: theme.transitions.easing.easeInOut,
             duration: theme.transitions.duration.shorter,
           }),
-          ...(isOffset && {
-            height: {
-              md: HEADER.H_MAIN_DESKTOP - 16,
-            },
-          }),
+       
         }}
       >
         <Container>
@@ -55,18 +48,17 @@ export default function Header() {
           >
             <Box sx={{ flexGrow: 1 }} />
 
-            {isDesktop && <NavDesktop isOffset={isOffset} data={navConfig} />}
+         <NavDesktop  data={navConfig} />
 
             {/* <Button variant="contained" target="_blank" rel="noopener" href={PATH_MINIMAL_ON_STORE}>
             Purchase Now
           </Button> */}
 
-            {!isDesktop && <NavMobile isOffset={isOffset} data={navConfig} />}
           </Box>
         </Container>
       </Toolbar>
 
-      {isOffset && <Shadow />}
+      <Shadow />}
     </AppBar>
   );
 }
@@ -86,7 +78,6 @@ function Shadow({ sx, ...other }: BoxProps) {
         borderRadius: "50%",
         position: "absolute",
         width: `calc(100% - 48px)`,
-        boxShadow: (theme) => theme.customShadows.z8,
         ...sx,
       }}
       {...other}

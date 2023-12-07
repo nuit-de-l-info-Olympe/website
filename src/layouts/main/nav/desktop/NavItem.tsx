@@ -1,19 +1,11 @@
 // @mui
-import {
-  Card,
-  Link,
-  LinkProps,
-  Box,
-  Typography,
-  Button,
-} from "@mui/material";
+import { Card, Link, LinkProps, Box, Typography, Button } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 // components
 import { m } from "framer-motion";
 // next
 import NextLink from "next/link";
 import { forwardRef } from "react";
-import Iconify from "../../../../components/iconify";
 //
 import { NavItemDesktopProps, NavItemProps } from "../types";
 import { ListItem } from "./styles";
@@ -30,7 +22,6 @@ export const NavItem = forwardRef<HTMLDivElement, NavItemDesktopProps>(
     const renderContent = (
       <ListItem
         ref={ref}
-        
         disableRipple
         isOffset={isOffset}
         subItem={subItem}
@@ -39,14 +30,6 @@ export const NavItem = forwardRef<HTMLDivElement, NavItemDesktopProps>(
         {...other}
       >
         {title}
-
-        {!!children && (
-          <Iconify
-            width={16}
-            icon="eva:arrow-ios-downward-fill"
-            sx={{ ml: 1 }}
-          />
-        )}
       </ListItem>
     );
 
