@@ -10,7 +10,6 @@ import { HEADER } from "../../config-global";
 import navConfig from "./nav/config-navigation";
 import NavDesktop from "./nav/desktop";
 //
-import NavMobile from "./nav/mobile";
 
 // ----------------------------------------------------------------------
 
