@@ -1,7 +1,6 @@
 import { Box, Container, Grid, Link, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { useRouter } from "next/router";
-import { _socials } from "../../_mock/arrays";
 
 // ----------------------------------------------------------------------
 
