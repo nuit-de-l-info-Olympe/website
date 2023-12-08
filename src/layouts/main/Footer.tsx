@@ -1,17 +1,9 @@
-import {
-  Box,
-  Container,
-  Grid,
-  Link,
-  Typography,
-} from "@mui/material";
+import { Box, Container, Grid, Link, Typography } from "@mui/material";
 import { useTheme } from "@mui/material/styles";
 import { useRouter } from "next/router";
 import { _socials } from "../../_mock/arrays";
 
-
 // ----------------------------------------------------------------------
-
 
 // ----------------------------------------------------------------------
 
@@ -19,9 +11,7 @@ export default function Footer() {
   const theme = useTheme();
   const { pathname } = useRouter();
 
-
   const isHome = pathname === "/";
-
 
   const mainFooter = (
     <Box component="footer">
@@ -32,7 +22,9 @@ export default function Footer() {
           color: theme.palette.grey[100],
         }}
       >
-        <Container></Container>
+        <Container>
+          <Box alignContent="center">Made in CESI & La nuit de l'info</Box>
+        </Container>
       </Box>
     </Box>
   );

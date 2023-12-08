@@ -9,6 +9,9 @@ import Header from "src/layouts/compact/Header";
 import MainLayout from "src/layouts/main";
 import Source from "./sources";
 import Fais from "./fais";
+import Presentation from "./presentation";
+import Slider from "./slider";
+import { Container, Grid, Stack } from "@mui/material";
 
 HomePage.getLayout = (page: React.ReactElement) => (
   <MainLayout> {page} </MainLayout>
@@ -72,10 +75,10 @@ export default function HomePage() {
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
-        <MyApp />
-        <Source />
-        <Fais />
-      </ThemeProvider>
+        {/* <MyApp /> */}
+        <Slider />
+        <Presentation />
+       </ThemeProvider>
     </ColorModeContext.Provider>
   );
 }

@@ -11,10 +11,13 @@
   "dependencies": {
     "@hookform/resolvers": "^3.3.2",
     "@types/yup": "^0.32.0",
+    "iconify": "^1.4.0",
     "next": "14.0.1",
     "react": "^18",
     "react-dom": "^18",
-    "react-hook-form": "^7.47.0"
+    "react-google-forms-hooks": "^1.2.4",
+    "react-hook-form": "^7.47.0",
+    "react-slick": "^0.29.0"
   },
   "devDependencies": {
     "@emotion/cache": "^11.10.5",
