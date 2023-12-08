@@ -48,7 +48,7 @@ export default function Header() {
           >
             <Box sx={{ flexGrow: 1 }} />
 
-         <NavDesktop  data={navConfig} />
+         <NavDesktop  data={navConfig} isOffset={false} />
 
             {/* <Button variant="contained" target="_blank" rel="noopener" href={PATH_MINIMAL_ON_STORE}>
             Purchase Now
