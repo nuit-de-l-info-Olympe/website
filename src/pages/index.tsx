@@ -11,7 +11,7 @@ import Source from "./sources";
 import Fais from "./fais";
 import Presentation from "./presentation";
 import Slider from "./slider";
-import { Container, Grid, Stack } from "@mui/material";
+import { Container, Grid, Link, Stack } from "@mui/material";
 
 HomePage.getLayout = (page: React.ReactElement) => (
   <MainLayout> {page} </MainLayout>
@@ -78,6 +78,7 @@ export default function HomePage() {
         {/* <MyApp /> */}
         <Slider />
         <Presentation />
+          <Link href="https://docs.google.com/forms/d/e/1FAIpQLSetYOlcODK0tYKosLRdgnlZt1XMkGNnNMO-euAJriHzGEJT1w/viewform?usp=sf_link" target='_blank'>Un petit quiz</Link>
        </ThemeProvider>
     </ColorModeContext.Provider>
   );
