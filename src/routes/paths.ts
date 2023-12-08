@@ -10,7 +10,7 @@ export const PUBLIC_PAGE = {
   presentation: "/presentation",
   fais: "/fais",
   sources: "/sources",
-  equipe: "/equipe",
+  teams: "/equipe",
   
   // page404: "/404",
   // page403: "/403",

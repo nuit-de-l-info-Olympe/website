@@ -17,7 +17,7 @@ const navConfig = [
 
  {
     title: 'Presentation Equipe',
-    path: PUBLIC_PAGE.equipe,
+    path: PUBLIC_PAGE.teams,
   },
   {
     title: 'Presentation',
