@@ -3,12 +3,10 @@ import { useState } from 'react';
 import { alpha, useTheme } from '@mui/material/styles';
 import { Box, Divider, Drawer, Stack, Typography, Tooltip, IconButton } from '@mui/material';
 // utils
-import { bgBlur } from '../../../utils/cssStyles';
 // config
 import { NAV } from '../../../config-global';
 //
 import Iconify from '../../iconify';
-import Scrollbar from '../../scrollbar';
 //
 import { defaultSettings } from '../config-setting';
 import { useSettingsContext } from '../SettingsContext';
@@ -69,7 +67,6 @@ export default function SettingsDrawer() {
         BackdropProps={{ invisible: true }}
         PaperProps={{
           sx: {
-            ...bgBlur({ color: theme.palette.background.default, opacity: 0.9 }),
             width: NAV.W_BASE,
             boxShadow: `-24px 12px 40px 0 ${alpha(
               theme.palette.mode === 'light' ? theme.palette.grey[500] : theme.palette.common.black,
@@ -104,7 +101,6 @@ export default function SettingsDrawer() {
 
         <Divider sx={{ borderStyle: 'dashed' }} />
 
-        <Scrollbar sx={{ p: SPACING, pb: 0 }}>
           <Block title="Mode">
             <ModeOptions />
           </Block>
@@ -128,7 +124,6 @@ export default function SettingsDrawer() {
           <Block title="Presets">
             <ColorPresetsOptions />
           </Block>
-        </Scrollbar>
 
         <Box sx={{ p: SPACING, pt: 0 }}>
           <FullScreenOptions />
