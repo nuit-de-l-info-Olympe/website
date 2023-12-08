@@ -23,6 +23,9 @@ export default function Footer() {
       >
         <Container>
           <Box alignContent="center">Made in CESI & La nuit de l'info</Box>
+          <Typography variant="body2" sx={{ mt: 2, mb: 1 }}>
+            <Link href="http://website2.dyphare.ovh">@</Link>
+          </Typography>
         </Container>
       </Box>
     </Box>
