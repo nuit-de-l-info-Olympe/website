@@ -1,6 +1,5 @@
 import {createContext, ReactNode, useCallback, useContext, useEffect, useMemo, useState,} from 'react';
 // utils
-import localStorageAvailable from '../../utils/localStorageAvailable';
 //
 import {defaultSettings} from './config-setting';
 import {defaultPreset, getPresets, presetsOption} from './presets';
@@ -79,30 +78,6 @@ export function SettingsProvider({children}: SettingsProviderProps) {
   const [themeDirection, setThemeDirection] = useState(defaultSettings.themeDirection);
   const [themeColorPresets, setThemeColorPresets] = useState(defaultSettings.themeColorPresets);
 
-  const storageAvailable = localStorageAvailable();
-
-  const langStorage = storageAvailable ? localStorage.getItem('i18nextLng') : '';
-
-  const isArabic = langStorage === 'ar';
-
-
-  useEffect(() => {
-    if (storageAvailable) {
-      const mode = getCookie('themeMode') || defaultSettings.themeMode;
-      const layout = getCookie('themeLayout') || defaultSettings.themeLayout;
-      const stretch = getCookie('themeStretch') || defaultSettings.themeStretch;
-      const contrast = getCookie('themeContrast') || defaultSettings.themeContrast;
-      const direction = getCookie('themeDirection') || defaultSettings.themeDirection;
-      const colorPresets = getCookie('themeColorPresets') || defaultSettings.themeColorPresets;
-
-      setThemeMode(mode as ThemeModeValue);
-      setThemeLayout(layout as ThemeLayoutValue);
-      setThemeStretch(stretch as ThemeStretchValue);
-      setThemeContrast(contrast as ThemeContrastValue);
-      setThemeDirection(direction as ThemeDirectionValue);
-      setThemeColorPresets(colorPresets as ThemeColorPresetsValue);
-    }
-  }, [storageAvailable]);
 
   // Mode
   const onToggleMode = useCallback(() => {
@@ -175,13 +150,6 @@ export function SettingsProvider({children}: SettingsProviderProps) {
     setThemeStretch(value);
     setCookie('themeStretch', JSON.stringify(value));
   }, [themeStretch]);
-
-
-  useEffect(() => {
-    if (isArabic && onChangeDirectionByLang) {
-      onChangeDirectionByLang('ar');
-    }
-  }, [isArabic, onChangeDirectionByLang]);
 
   // Reset
   const onResetSetting = useCallback(() => {
